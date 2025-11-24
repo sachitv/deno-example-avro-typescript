@@ -1,0 +1,30 @@
+{
+  "tasks": {
+    "build": "mkdir -p dist && deno bundle --lock=deno.lock --platform=browser -o dist/browser.js src/browser.ts",
+    "dev": "deno run --allow-net --allow-read --lock=deno.lock src/server.ts",
+    "start": "deno task build && deno task dev",
+    "fmt": "deno fmt",
+    "fmt:check": "deno fmt --check",
+    "lint": "deno lint",
+    "test": "deno test --allow-net --allow-read --allow-write --lock=deno.lock",
+    "cli": "deno run --allow-read --allow-write --lock=deno.lock src/index.ts"
+  },
+  "lock": "deno.lock",
+  "imports": {
+    "@sachitv/avro-typescript": "jsr:@sachitv/avro-typescript@0.3.1",
+    "@std/assert": "jsr:@std/assert@1",
+    "@std/http/file-server": "jsr:@std/http@1.0.22/file-server"
+  },
+  "compilerOptions": {
+    "lib": ["deno.ns", "dom", "dom.iterable"],
+    "strict": true
+  },
+  "fmt": {
+    "include": ["src", "tests", "README.md"],
+    "exclude": ["dist"]
+  },
+  "lint": {
+    "include": ["src", "tests"],
+    "exclude": ["dist"]
+  }
+}
