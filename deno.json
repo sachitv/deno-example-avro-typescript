@@ -11,7 +11,7 @@
   },
   "lock": "deno.lock",
   "imports": {
-    "@sachitv/avro-typescript": "jsr:@sachitv/avro-typescript@0.3.1",
+    "@sachitv/avro-typescript": "jsr:@sachitv/avro-typescript@^0.6.0",
     "@std/assert": "jsr:@std/assert@1",
     "@std/http/file-server": "jsr:@std/http@1.0.22/file-server"
   },
